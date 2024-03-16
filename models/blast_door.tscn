@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgt7ph0knvasb"]
+
+[ext_resource type="PackedScene" uid="uid://vrgoyq6se2be" path="res://assets/3d_models/BlastDoor.glb" id="1_cwtct"]
+[ext_resource type="Script" path="res://models/blast_door.gd" id="2_x7aw2"]
+
+[node name="BlastDoor" instance=ExtResource("1_cwtct")]
+script = ExtResource("2_x7aw2")
+
+[node name="Skeleton3D" parent="DoorArmature" index="0"]
+bones/2/position = Vector3(-1.39388, 1.5307, 2.05664e-07)

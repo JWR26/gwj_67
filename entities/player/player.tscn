@@ -1,39 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://f2ybmriwskkl"]
+[gd_scene load_steps=19 format=3 uid="uid://f2ybmriwskkl"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_lmvu0"]
-[ext_resource type="PackedScene" uid="uid://bffalfoobcbgh" path="res://Models/human_model.tscn" id="2_m0201"]
+[ext_resource type="PackedScene" uid="uid://bffalfoobcbgh" path="res://models/human_model.tscn" id="2_m0201"]
 [ext_resource type="Script" path="res://entities/player/parasite_counter.gd" id="3_5q7kp"]
 [ext_resource type="Script" path="res://entities/enemy/EnemyHealthBar.gd" id="3_6tll0"]
 [ext_resource type="Script" path="res://entities/player/player_health_component.gd" id="3_kw3co"]
 [ext_resource type="Script" path="res://entities/player/player_camera.gd" id="3_t1fhh"]
 [ext_resource type="Texture2D" uid="uid://dhc4vf1uampt6" path="res://assets/ui/worm_sprite.png" id="5_mrqfp"]
 [ext_resource type="Texture2D" uid="uid://cv3y8tacprvns" path="res://assets/ui/hp_orb.png" id="6_pvmtb"]
+[ext_resource type="Texture2D" uid="uid://dxilrc8rmco50" path="res://assets/ui/hp_bar_under.png" id="7_qwogu"]
 [ext_resource type="Script" path="res://entities/player/hporb.gd" id="8_eiqgn"]
+[ext_resource type="Texture2D" uid="uid://7wj0l8dinafe" path="res://assets/ui/hp_bar_over_2.png" id="8_ypqv3"]
+[ext_resource type="Texture2D" uid="uid://bps5umltcai6m" path="res://assets/ui/hp_bar_over.png" id="9_0yntp"]
 [ext_resource type="AudioStream" uid="uid://b8g350prpubqp" path="res://assets/sfx/shoot_dry_fire.wav" id="10_mjutg"]
 [ext_resource type="AudioStream" uid="uid://bbb7dnq4or7ki" path="res://assets/sfx/shoot.wav" id="11_acc0a"]
 [ext_resource type="AudioStream" uid="uid://blo7jbw31ne51" path="res://assets/sfx/player_damage.wav" id="12_nd6rd"]
 [ext_resource type="AudioStream" uid="uid://cboaprg4uti3a" path="res://assets/sfx/player_die.wav" id="13_26rjh"]
-
-[sub_resource type="Gradient" id="Gradient_vdgue"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jmd8g"]
-gradient = SubResource("Gradient_vdgue")
-
-[sub_resource type="Gradient" id="Gradient_j0cn0"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_na15q"]
-gradient = SubResource("Gradient_j0cn0")
-
-[sub_resource type="Gradient" id="Gradient_t4fcd"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3lxab"]
-gradient = SubResource("Gradient_t4fcd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w01ao"]
 size = Vector3(0.5, 2, 0.5)
@@ -61,12 +43,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
+offset_top = -144.0
+offset_right = -640.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 64
+theme_override_constants/margin_left = 120
 theme_override_constants/margin_top = 64
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 80
 script = ExtResource("3_5q7kp")
 player_health_component = NodePath("../../../PlayerHealthComponent")
 
@@ -101,8 +84,8 @@ max_value = 10.0
 step = 0.01
 value = 5.0
 nine_patch_stretch = true
-texture_under = SubResource("GradientTexture1D_jmd8g")
-texture_progress = SubResource("GradientTexture1D_na15q")
+texture_under = ExtResource("7_qwogu")
+texture_progress = ExtResource("8_ypqv3")
 
 [node name="Over" type="TextureProgressBar" parent="Camera3D/CanvasLayer/HealthBar"]
 custom_minimum_size = Vector2(0, 32)
@@ -111,7 +94,7 @@ max_value = 10.0
 step = 0.01
 value = 4.0
 nine_patch_stretch = true
-texture_progress = SubResource("GradientTexture1D_3lxab")
+texture_progress = ExtResource("9_0yntp")
 
 [node name="HPOrb" type="TextureRect" parent="Camera3D/CanvasLayer" node_paths=PackedStringArray("health_component")]
 anchors_preset = 2

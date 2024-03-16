@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bffalfoobcbgh"]
 
 [ext_resource type="PackedScene" uid="uid://bindqdlqx0l7i" path="res://assets/3d_models/Human (1).glb" id="1_x144e"]
-[ext_resource type="Script" path="res://Models/human_model.gd" id="2_kmvrf"]
+[ext_resource type="Script" path="res://models/human_model.gd" id="2_kmvrf"]
 [ext_resource type="PackedScene" uid="uid://bdmk6awac77g6" path="res://assets/3d_models/Pistol.glb" id="3_f3h4o"]
 
 [node name="HumanModel" instance=ExtResource("1_x144e")]

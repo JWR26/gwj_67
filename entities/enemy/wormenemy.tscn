@@ -1,52 +1,31 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjv077a40lict"]
+[gd_scene load_steps=11 format=3 uid="uid://bjv077a40lict"]
 
 [ext_resource type="Script" path="res://entities/enemy/enemy.gd" id="1_tm2i6"]
-[ext_resource type="PackedScene" uid="uid://csuhbe8yrln5r" path="res://models/Worm (1).glb" id="2_0geah"]
+[ext_resource type="PackedScene" uid="uid://ru4dpvbys48w" path="res://models/worm.tscn" id="2_jdj87"]
 [ext_resource type="Script" path="res://entities/enemy/EnemyHealthBar.gd" id="3_j4q87"]
 [ext_resource type="Script" path="res://entities/health_component.gd" id="3_yj1ft"]
+[ext_resource type="Texture2D" uid="uid://dxilrc8rmco50" path="res://assets/ui/hp_bar_under.png" id="4_5h78w"]
+[ext_resource type="Texture2D" uid="uid://7wj0l8dinafe" path="res://assets/ui/hp_bar_over_2.png" id="5_6i4wi"]
 [ext_resource type="AudioStream" uid="uid://qhxystnjovbr" path="res://assets/sfx/worm_shot.wav" id="5_6x5oa"]
+[ext_resource type="Texture2D" uid="uid://bps5umltcai6m" path="res://assets/ui/hp_bar_over.png" id="6_krygu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ic3oa"]
 size = Vector3(1, 1, 2)
-
-[sub_resource type="Gradient" id="Gradient_m0gnf"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2r8cw"]
-gradient = SubResource("Gradient_m0gnf")
-
-[sub_resource type="Gradient" id="Gradient_07tav"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_sokqh"]
-gradient = SubResource("Gradient_07tav")
-
-[sub_resource type="Gradient" id="Gradient_0dqr1"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0, 1, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_tkv08"]
-gradient = SubResource("Gradient_0dqr1")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4bjw2"]
 viewport_path = NodePath("EnemyHealthBar")
 
 [node name="WormEnemy" type="CharacterBody3D"]
 script = ExtResource("1_tm2i6")
-attack_range = 1.2
+attack_range = 1.75
 speed = 3
 
-[node name="Model" parent="." instance=ExtResource("2_0geah")]
+[node name="Worm" parent="." instance=ExtResource("2_jdj87")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_ic3oa")
-
-[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
-aabb = AABB(-1, -1, -3, 2, 2, 6)
 
 [node name="EnemyHealthBar" type="SubViewport" parent="."]
 handle_input_locally = false
@@ -69,8 +48,8 @@ max_value = 4.0
 step = 0.01
 value = 4.0
 nine_patch_stretch = true
-texture_under = SubResource("GradientTexture1D_2r8cw")
-texture_progress = SubResource("GradientTexture1D_sokqh")
+texture_under = ExtResource("4_5h78w")
+texture_progress = ExtResource("5_6i4wi")
 
 [node name="Over" type="TextureProgressBar" parent="EnemyHealthBar/Control"]
 custom_minimum_size = Vector2(0, 32)
@@ -79,7 +58,7 @@ max_value = 4.0
 step = 0.01
 value = 4.0
 nine_patch_stretch = true
-texture_progress = SubResource("GradientTexture1D_tkv08")
+texture_progress = ExtResource("6_krygu")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -97,3 +76,7 @@ radius = 1.0
 
 [node name="Shot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_6x5oa")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]

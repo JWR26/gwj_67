@@ -56,10 +56,6 @@ func _input(event: InputEvent) -> void:
 	queue_free()
 
 
-func _physics_process(delta: float) -> void:
-	mesh.rotation.y += delta * PI / 2
-
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not body is Player:
 		return

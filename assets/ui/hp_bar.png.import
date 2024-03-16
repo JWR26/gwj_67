@@ -2,28 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch0rjqp5a3jnx"
-path.s3tc="res://.godot/imported/Worm_maggot_albedo.jpg-418b4bef05c5dc438b2cf1a10933a9f8.s3tc.ctex"
+uid="uid://bgxj256i8y38t"
+path="res://.godot/imported/hp_bar.png-e1032b6ec335e22776c715a5475938ba.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://models/Worm_maggot_albedo.jpg"
-dest_files=["res://.godot/imported/Worm_maggot_albedo.jpg-418b4bef05c5dc438b2cf1a10933a9f8.s3tc.ctex"]
+source_file="res://assets/ui/hp_bar.png"
+dest_files=["res://.godot/imported/hp_bar.png-e1032b6ec335e22776c715a5475938ba.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -33,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

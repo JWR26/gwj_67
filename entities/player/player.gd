@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	# Pathfinding
-	if Input.is_action_pressed("move"):
+	if Input.is_action_pressed("move") and not current_state is PlayerStateExit:
 		if not camera.mouse_object():
 			return
 		
@@ -118,3 +118,11 @@ func _on_interactable_collected(type: Interactable.TYPE) -> void:
 	
 	if type == Interactable.TYPE.MEDS:
 		health_component.remove_parasites()
+
+
+func exit_level(pos: Vector3) -> void:
+	var new_state: PlayerStateExit = PlayerStateExit.new(self, human_model)
+	change_state(new_state)
+	nav_agent.set_target_position(pos)
+	
+

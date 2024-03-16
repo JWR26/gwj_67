@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ru4dpvbys48w"]
+
+[ext_resource type="PackedScene" uid="uid://csuhbe8yrln5r" path="res://models/Worm (1).glb" id="1_630xp"]
+[ext_resource type="Script" path="res://models/worm.gd" id="2_yg2c2"]
+
+[node name="Worm" instance=ExtResource("1_630xp")]
+script = ExtResource("2_yg2c2")
+
+[node name="Skeleton3D" parent="Armature_001" index="0"]
+bones/2/rotation = Quaternion(-0.0795117, 0.000128814, 1.03505e-05, 0.996834)
+bones/3/rotation = Quaternion(-0.119897, 0.141705, -0.658484, 0.729344)
+bones/4/rotation = Quaternion(-0.119726, -0.141515, 0.658515, 0.729381)
+bones/5/rotation = Quaternion(0.744153, -1.27417e-06, -1.41941e-06, 0.66801)
+bones/6/rotation = Quaternion(0.0332404, 1.07235e-06, -9.11414e-08, 0.999447)
+bones/9/rotation = Quaternion(0.275151, 0.703322, 0.428542, -0.495966)
+bones/11/rotation = Quaternion(-0.27515, 0.703324, 0.428543, 0.495963)
+bones/12/rotation = Quaternion(0.784886, -0.587456, -0.0699449, 0.184276)

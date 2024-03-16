@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://clmh8htdc7l87"]
+[gd_scene load_steps=4 format=3 uid="uid://clmh8htdc7l87"]
 
 [ext_resource type="Script" path="res://levels/tutorial/tutorial_trigger.gd" id="1_88ncg"]
+[ext_resource type="FontFile" uid="uid://c2ot7yj6g8wx6" path="res://assets/LabMol.ttf" id="2_aljav"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2tpth"]
 size = Vector3(10, 8, 10)
@@ -14,9 +15,14 @@ shape = SubResource("BoxShape3D_2tpth")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-custom_minimum_size = Vector2(300, 180)
-offset_right = 300.0
-offset_bottom = 160.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_right = 288.0
+grow_vertical = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_aljav")
+theme_override_font_sizes/font_size = 48
 text = "[instruction text here, that will be split over multiple lines]"
 vertical_alignment = 1
 autowrap_mode = 2

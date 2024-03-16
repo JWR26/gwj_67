@@ -11,5 +11,6 @@ extends WorldEnvironment
 			environment.fog_enabled = false
 			environment.reflected_light_source = Environment.REFLECTION_SOURCE_BG
 
+
 func _ready() -> void:
 	active = true
