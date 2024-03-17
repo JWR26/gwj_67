@@ -10,6 +10,9 @@ var target: Vector3
 func calculate_velocity(from: Vector3, to: Vector3) -> PlayerState:
 	target = to
 	
+	if from.distance_to(to) < 2:
+		EventBus.level_complete.emit()
+	
 	player.velocity = from.direction_to(target) * SPEED
 	
 	return null

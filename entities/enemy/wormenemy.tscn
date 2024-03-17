@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjv077a40lict"]
 
-[ext_resource type="Script" path="res://entities/enemy/enemy.gd" id="1_tm2i6"]
+[ext_resource type="Script" path="res://entities/enemy/worm_enemy.gd" id="1_3b7qm"]
 [ext_resource type="PackedScene" uid="uid://ru4dpvbys48w" path="res://models/worm.tscn" id="2_jdj87"]
 [ext_resource type="Script" path="res://entities/enemy/EnemyHealthBar.gd" id="3_j4q87"]
 [ext_resource type="Script" path="res://entities/health_component.gd" id="3_yj1ft"]
@@ -15,10 +15,11 @@ size = Vector3(1, 1, 2)
 [sub_resource type="ViewportTexture" id="ViewportTexture_4bjw2"]
 viewport_path = NodePath("EnemyHealthBar")
 
-[node name="WormEnemy" type="CharacterBody3D"]
-script = ExtResource("1_tm2i6")
+[node name="WormEnemy" type="CharacterBody3D" node_paths=PackedStringArray("model")]
+script = ExtResource("1_3b7qm")
 attack_range = 1.75
 speed = 3
+model = NodePath("Worm")
 
 [node name="Worm" parent="." instance=ExtResource("2_jdj87")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6bsvou7teilt"]
+
+[ext_resource type="FontFile" uid="uid://wbds2sgs2m6t" path="res://assets/PARASITE.ttf" id="1_tq1nr"]
+
+[resource]
+font = ExtResource("1_tq1nr")
+font_size = 128
+font_color = Color(1, 1, 0.376471, 1)
+outline_size = 4
+outline_color = Color(0.305882, 0.305882, 0, 1)

@@ -22,6 +22,7 @@ func _ready() -> void:
 	health_component.died.connect(on_died)
 	health_component.damaged.connect(on_damaged)
 	EventBus.interacable_collected.connect(_on_interactable_collected)
+	bullets = Persistants.bullets
 
 
 func _input(event: InputEvent) -> void:
@@ -74,9 +75,14 @@ func on_died() -> void:
 	$Hurt.stop()
 	$Die.play()
 	velocity = Vector3.ZERO
+	var timer: SceneTreeTimer = get_tree().create_timer(4.0)
+	await timer.timeout
+	
+	SceneChanger.change_scene("res://levels/death.tscn")
 
 
 func infest() -> void:
+	Persistants.parasites += 1
 	$PlayerHealthComponent.add_parasite()
 
 
@@ -121,6 +127,7 @@ func _on_interactable_collected(type: Interactable.TYPE) -> void:
 
 
 func exit_level(pos: Vector3) -> void:
+	Persistants.bullets = bullets
 	var new_state: PlayerStateExit = PlayerStateExit.new(self, human_model)
 	change_state(new_state)
 	nav_agent.set_target_position(pos)

@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://dom62y8ru8k3u"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_s14fc"]
+[ext_resource type="LabelSettings" uid="uid://6bsvou7teilt" path="res://levels/level_complete_label.tres" id="2_4r2kn"]
+[ext_resource type="FontFile" uid="uid://wbds2sgs2m6t" path="res://assets/PARASITE.ttf" id="3_eq5af"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_chpix"]
+font = ExtResource("3_eq5af")
+font_size = 48
+font_color = Color(1, 1, 0.376471, 1)
+outline_size = 4
+outline_color = Color(0.305882, 0.305882, 0, 1)
+
+[sub_resource type="Animation" id="Animation_mur6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/MarginContainer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d1ryy"]
+resource_name = "flash"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/MarginContainer2/Label:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip5lc"]
+_data = {
+"RESET": SubResource("Animation_mur6r"),
+"flash": SubResource("Animation_d1ryy")
+}
+
+[node name="LevelComplete" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s14fc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "YOU DIED!"
+label_settings = ExtResource("2_4r2kn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 7
+text = "CLICK TO PLAY AGAIN..."
+label_settings = SubResource("LabelSettings_chpix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ip5lc")
+}
+autoplay = "flash"

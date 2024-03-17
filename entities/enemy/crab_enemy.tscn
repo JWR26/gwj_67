@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://r2g2hb8ycdbg"]
 
-[ext_resource type="Script" path="res://entities/enemy/enemy.gd" id="1_5m5pg"]
-[ext_resource type="PackedScene" uid="uid://brty8rabhgmbo" path="res://assets/3d_models/Crab.glb" id="2_qq4d8"]
+[ext_resource type="Script" path="res://entities/enemy/crab_enemy.gd" id="1_ktt4y"]
+[ext_resource type="PackedScene" uid="uid://c84d8ooj6jpsw" path="res://models/crab.tscn" id="2_1rl1c"]
 [ext_resource type="Script" path="res://entities/enemy/EnemyHealthBar.gd" id="3_m1xyu"]
 [ext_resource type="Script" path="res://entities/health_component.gd" id="4_7dtw7"]
 [ext_resource type="Texture2D" uid="uid://dxilrc8rmco50" path="res://assets/ui/hp_bar_under.png" id="4_104mj"]
@@ -16,12 +16,13 @@ radius = 2.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_4bjw2"]
 viewport_path = NodePath("EnemyHealthBar")
 
-[node name="CrabEnemy" type="CharacterBody3D"]
-script = ExtResource("1_5m5pg")
-attack_range = 2.25
+[node name="CrabEnemy" type="CharacterBody3D" node_paths=PackedStringArray("model")]
+script = ExtResource("1_ktt4y")
+attack_range = 2.5
 speed = 1
+model = NodePath("Crab")
 
-[node name="Model" parent="." instance=ExtResource("2_qq4d8")]
+[node name="Crab" parent="." instance=ExtResource("2_1rl1c")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)

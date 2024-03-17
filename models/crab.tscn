@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84d8ooj6jpsw"]
+
+[ext_resource type="PackedScene" uid="uid://brty8rabhgmbo" path="res://assets/3d_models/Crab.glb" id="1_476k3"]
+[ext_resource type="Script" path="res://crab_model.gd" id="2_7gl0g"]
+
+[node name="Crab" instance=ExtResource("1_476k3")]
+script = ExtResource("2_7gl0g")
+
+[node name="Skeleton3D" parent="CrabArmature" index="0"]
+bones/0/rotation = Quaternion(0, 0.707107, 0, 0.707107)
+bones/1/position = Vector3(-3.26301e-13, 1.90932, -0.910002)
+bones/1/rotation = Quaternion(0.765533, -0.0527336, 0.0568876, 0.638703)
+bones/2/rotation = Quaternion(-0.46075, -1.58703e-06, -6.04182e-07, 0.88753)
+bones/3/rotation = Quaternion(-0.163376, 0.132715, -0.52523, 0.824517)
+bones/4/rotation = Quaternion(0.774268, 0.0220695, -0.00936328, 0.632403)
+bones/5/rotation = Quaternion(0.867397, 0.495992, 0.0350537, -0.0196293)
+bones/6/rotation = Quaternion(-0.692579, -0.0245448, -0.00627911, 0.720897)
+bones/7/rotation = Quaternion(-0.227138, -0.0548367, 0.456054, 0.858729)
+bones/8/rotation = Quaternion(0.804231, 0.066136, -0.0606796, 0.5875)
+bones/9/rotation = Quaternion(0.836582, -0.546824, 0.0323249, 0.00828323)
+bones/10/rotation = Quaternion(-0.721821, 0.0789159, 0.0588734, 0.68504)
+bones/12/rotation = Quaternion(0.725039, 0.0396247, -0.0373113, 0.686554)
+bones/15/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)

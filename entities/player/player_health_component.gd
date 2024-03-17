@@ -21,9 +21,12 @@ const COUNTDOWN: float = 10.0
 ## Damages player upon timeout
 var damage_timer: Timer = Timer.new()
 ## The number of parasites the player is infested with.
-var parasite_count: int = 1
+var parasite_count: int = 0
 
 func _ready() -> void:
+	parasite_count = Persistants.parasites
+	hp = Persistants.hp
+	max_hp = Persistants.PLAYER_HP
 	start_damage_timer()
 	super._ready()
 

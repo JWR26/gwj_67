@@ -12,12 +12,9 @@ func _on_interactable_collected(type: Interactable.TYPE) -> void:
 	if type == Interactable.TYPE.KEY:
 		is_open = true
 		$BlastDoor.open()
-		
-		var tween: Tween = get_tree().create_tween()
-		tween.set_parallel(true)
-		
+
 		for l in $Lights.get_children():
-			tween.tween_property(l, "light_color", Color.LAWN_GREEN, 0.5)
+			l.light_color = Color.LAWN_GREEN
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

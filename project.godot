@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Parasite-game"
-run/main_scene="res://levels/level_0_tutorial_grid.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://assets/icon/worm.png"
@@ -20,6 +20,9 @@ config/windows_native_icon="res://assets/icon/worm.ico"
 [autoload]
 
 EventBus="*res://autoload/event_bus.gd"
+SceneChanger="*res://autoload/scene_changer.tscn"
+Persistants="*res://autoload/persistants.gd"
+GameManager="*res://Game.tscn"
 
 [display]
 

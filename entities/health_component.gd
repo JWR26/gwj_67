@@ -20,6 +20,7 @@ var hp: int
 
 func _ready() -> void:
 	hp = max_hp
+	hp_updated.emit(hp)
 
 
 ## Modify the hit points by the passed in value. Healing is achieved by passing in a negative value. No default value so the ammount of damage given does not need inferring.
