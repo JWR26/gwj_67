@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwq1d1oy1j1sj"]
+
+[ext_resource type="Script" path="res://entities/player/ammo_counter.gd" id="1_hi2qk"]
+[ext_resource type="Texture2D" uid="uid://b8mug62lmsoqy" path="res://assets/ui/ammo_box.png" id="1_iy6ek"]
+
+[node name="AmmoCounter" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hi2qk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{bullet n° goes here}"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_iy6ek")
+expand_mode = 3
+stretch_mode = 5

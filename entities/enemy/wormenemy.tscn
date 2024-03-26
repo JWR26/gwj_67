@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bps5umltcai6m" path="res://assets/ui/hp_bar_over.png" id="6_krygu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ic3oa"]
-size = Vector3(1, 1, 2)
+size = Vector3(0.5, 0.5, 1.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4bjw2"]
 viewport_path = NodePath("EnemyHealthBar")
@@ -22,10 +22,10 @@ speed = 3
 model = NodePath("Worm")
 
 [node name="Worm" parent="." instance=ExtResource("2_jdj87")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_ic3oa")
 
 [node name="EnemyHealthBar" type="SubViewport" parent="."]
@@ -71,6 +71,7 @@ script = ExtResource("3_yj1ft")
 max_hp = 3
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
 radius = 1.0

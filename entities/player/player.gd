@@ -93,6 +93,7 @@ func get_infest_point() -> Vector3:
 func add_bullets(value: int) -> void:
 	bullets += value
 	bullets = clamp(bullets, 0, bullets)
+	$Camera3D/CanvasLayer/UI/HBoxContainer/AmmoCounter.update(bullets)
 
 
 func shoot() -> void:
@@ -114,6 +115,7 @@ func shoot() -> void:
 func on_damaged() -> void:
 	$Hurt.play()
 
+
 func _on_interactable_collected(type: Interactable.TYPE) -> void:
 	# player does need to know the key is collected. The door contains this information
 	if type == Interactable.TYPE.AMMO:
@@ -131,5 +133,12 @@ func exit_level(pos: Vector3) -> void:
 	var new_state: PlayerStateExit = PlayerStateExit.new(self, human_model)
 	change_state(new_state)
 	nav_agent.set_target_position(pos)
-	
+
+
+func zoom_in() -> void:
+	camera.move_close()
+
+
+func zoom_out() -> void:
+	camera.move_far()
 

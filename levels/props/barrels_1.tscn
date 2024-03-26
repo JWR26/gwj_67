@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://8gl5byreskrw"]
+
+[ext_resource type="PackedScene" uid="uid://begnnugvcnukh" path="res://assets/3d_models/Barrel.glb" id="1_oes81"]
+
+[node name="Barrels1" type="Node3D"]
+
+[node name="Barrel2" parent="." instance=ExtResource("1_oes81")]
+
+[node name="Barrel3" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.895581, 0, 0)
+
+[node name="Barrel4" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.447881, 0, 0.816564)
+
+[node name="Barrel5" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.897181, 0, 0)
+
+[node name="Barrel6" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464886, 1.33918, 0.491834)
+
+[node name="Barrel8" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441985, 1.33918, 0.491834)
+
+[node name="Barrel7" parent="." instance=ExtResource("1_oes81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.465, 0, 0.829337)

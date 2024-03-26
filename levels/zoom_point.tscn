@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv8ju0r6ksjye"]
+
+[ext_resource type="Script" path="res://levels/zoom_point.gd" id="1_obvvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jr6j5"]
+size = Vector3(4, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lthe"]
+size = Vector3(4, 6, 1)
+
+[node name="ZoomPoint" type="Node3D"]
+script = ExtResource("1_obvvl")
+
+[node name="ZoomOut" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoomOut"]
+shape = SubResource("BoxShape3D_jr6j5")
+
+[node name="ZoomIn" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoomIn"]
+shape = SubResource("BoxShape3D_1lthe")
+
+[connection signal="body_entered" from="ZoomOut" to="." method="_on_zoom_out_body_entered"]
+[connection signal="body_entered" from="ZoomIn" to="." method="_on_zoom_in_body_entered"]

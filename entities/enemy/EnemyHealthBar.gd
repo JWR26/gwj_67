@@ -1,9 +1,9 @@
 class_name EnemyHealthBar
 
-extends MarginContainer
+extends Control
 
-@onready var under: TextureProgressBar = $Under
-@onready var over: TextureProgressBar = $Over
+@onready var under: TextureProgressBar = $VSplitContainer/Bars/Under
+@onready var over: TextureProgressBar = $VSplitContainer/Bars/Over
 
 @export var health_component: HealthComponent
 

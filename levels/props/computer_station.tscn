@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuyfveqdquk78"]
+
+[ext_resource type="PackedScene" uid="uid://c7t7odwo35wh2" path="res://assets/3d_models/ComputerConsole.glb" id="1_742hk"]
+[ext_resource type="PackedScene" uid="uid://csh1n23nig5js" path="res://levels/props/computer_console.tscn" id="2_sgaf0"]
+
+[node name="ComputerStation" type="Node3D"]
+
+[node name="ComputerConsole2" parent="." instance=ExtResource("1_742hk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7)
+
+[node name="ComputerConsole4" parent="." instance=ExtResource("1_742hk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.1, 0, -0.7)
+
+[node name="ComputerConsole" parent="." instance=ExtResource("2_sgaf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0.7)
+
+[node name="ComputerConsole3" parent="." instance=ExtResource("2_sgaf0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.7)

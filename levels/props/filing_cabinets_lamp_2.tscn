@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://co1d7kq01mmsq"]
+
+[ext_resource type="PackedScene" uid="uid://c83dm3f345vko" path="res://assets/3d_models/FilingCabinet.glb" id="1_urqv8"]
+[ext_resource type="PackedScene" uid="uid://dna8885q4xnck" path="res://levels/props/lamp.tscn" id="2_86k0q"]
+[ext_resource type="PackedScene" uid="uid://cpfe6uajs5vuu" path="res://assets/3d_models/KBM.glb" id="3_fwuyd"]
+[ext_resource type="PackedScene" uid="uid://dakelyoqn4kwn" path="res://assets/3d_models/PCMonitor.glb" id="4_msihp"]
+
+[node name="FilingCabinetsLamp" type="Node3D"]
+
+[node name="FilingCabinet2" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.998155, 0, 0.0607175, 0, 1, 0, -0.0607175, 0, 0.998155, 0, 0, 0)
+
+[node name="FilingCabinet3" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.997877, 0, -0.0651245, 0, 1, 0, 0.0651245, 0, 0.997877, 0.711922, 0, 0)
+
+[node name="FilingCabinet4" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.998774, 0, 0.0495122, 0, 1, 0, -0.0495122, 0, 0.998774, 1.39547, 0, 0)
+
+[node name="FilingCabinet5" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.998333, 0, -0.0577209, 0, 1, 0, 0.0577209, 0, 0.998333, -0.711433, 0, 0.0396447)
+
+[node name="FilingCabinet6" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.997598, 0, 0.0692689, 0, 1, 0, -0.0692689, 0, 0.997598, -1.5308, 0, 0.0396447)
+
+[node name="FilingCabinet7" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.999862, 0, 0.0166147, 0, 1, 0, -0.0166147, 0, 0.999862, -2.21688, 0, 0.0396447)
+
+[node name="FilingCabinet8" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.999862, 0, 0.0166147, 0, 1, 0, -0.0166147, 0, 0.999862, -2.90844, 0, 0.0396447)
+
+[node name="FilingCabinet9" parent="." instance=ExtResource("1_urqv8")]
+transform = Transform3D(0.999862, 0, 0.0166147, 0, 1, 0, -0.0166147, 0, 0.999862, 2.09596, 0, 0.0396447)
+
+[node name="Lamp" parent="." instance=ExtResource("2_86k0q")]
+transform = Transform3D(0.669533, 0, 0.742783, 0, 1, 0, -0.742783, 0, 0.669533, 1.43768, 1.852, 0.150397)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0.316557, 0.187054)
+shadow_enabled = true
+
+[node name="Lamp2" parent="." instance=ExtResource("2_86k0q")]
+transform = Transform3D(0.976834, 0, -0.214002, 0, 1, 0, 0.214002, 0, 0.976834, 0.0546765, 1.852, 0.259773)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0.316557, 0.187054)
+shadow_enabled = true
+
+[node name="Lamp3" parent="." instance=ExtResource("2_86k0q")]
+transform = Transform3D(0.629619, 0, -0.776905, 0, 1, 0, 0.776905, 0, 0.629619, -2.28641, 1.852, 0.259773)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0.316557, 0.187054)
+shadow_enabled = true
+
+[node name="KBM" parent="." instance=ExtResource("3_fwuyd")]
+transform = Transform3D(0.946941, 0, -0.321406, 0, 1, 0, 0.321406, 0, 0.946941, -0.574999, 1.84836, -4.34667e-05)
+
+[node name="PCMonitor" parent="." instance=ExtResource("4_msihp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53554, 1.84836, 0.0376047)
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.192, 0)
+light_color = Color(1, 0.498039, 0.498039, 1)
+shadow_enabled = true

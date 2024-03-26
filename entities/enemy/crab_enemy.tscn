@@ -10,8 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bps5umltcai6m" path="res://assets/ui/hp_bar_over.png" id="6_bdpsr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hprko"]
-height = 3.5
-radius = 2.0
+height = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4bjw2"]
 viewport_path = NodePath("EnemyHealthBar")
@@ -19,17 +18,18 @@ viewport_path = NodePath("EnemyHealthBar")
 [node name="CrabEnemy" type="CharacterBody3D" node_paths=PackedStringArray("model")]
 script = ExtResource("1_ktt4y")
 attack_range = 2.5
-speed = 1
+speed = 2
 model = NodePath("Crab")
 
 [node name="Crab" parent="." instance=ExtResource("2_1rl1c")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_hprko")
 
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
-aabb = AABB(-1, -1, -3, 2, 2, 6)
+aabb = AABB(-2, -1, -2, 4, 2, 4)
 
 [node name="EnemyHealthBar" type="SubViewport" parent="."]
 handle_input_locally = false
@@ -80,3 +80,5 @@ radius = 1.0
 
 [node name="Shot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_ud052")
+
+[connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]

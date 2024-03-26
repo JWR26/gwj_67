@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b32co2g3s6shk"]
+
+[ext_resource type="PackedScene" uid="uid://dois3l7oa7qum" path="res://assets/3d_models/CoffeTable.glb" id="1_vuht2"]
+[ext_resource type="PackedScene" uid="uid://biue8ti28n6f7" path="res://assets/3d_models/Couch.glb" id="2_wkxvd"]
+[ext_resource type="PackedScene" uid="uid://7orrj68ap5jv" path="res://assets/3d_models/Trashcan.glb" id="3_m03j8"]
+[ext_resource type="PackedScene" uid="uid://bdk22s3wh1ar2" path="res://assets/3d_models/CoffeMug.glb" id="4_h7vdv"]
+
+[node name="LoungeArea1" type="Node3D"]
+
+[node name="CoffeTable" parent="." instance=ExtResource("1_vuht2")]
+transform = Transform3D(0.781259, 0, -0.624207, 0, 1, 0, 0.624207, 0, 0.781259, 0, 0, 0)
+
+[node name="Couch2" parent="." instance=ExtResource("2_wkxvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.88)
+
+[node name="Couch3" parent="." instance=ExtResource("2_wkxvd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.8, 0, 0)
+
+[node name="Trashcan2" parent="." instance=ExtResource("3_m03j8")]
+transform = Transform3D(0.773254, 0, -0.634096, 0, 1, 0, 0.634096, 0, 0.773254, 1.8, 0, -1.8)
+
+[node name="CoffeMug" parent="." instance=ExtResource("4_h7vdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330921, 0.577623, -0.250451)
+
+[node name="CoffeMug2" parent="." instance=ExtResource("4_h7vdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.450539, 0.577623, -0.453263)
+
+[node name="CoffeMug3" parent="." instance=ExtResource("4_h7vdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.531824, 0.577623, 0.112791)
+
+[node name="CoffeMug4" parent="." instance=ExtResource("4_h7vdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.531824, 0.577623, 0.483786)
